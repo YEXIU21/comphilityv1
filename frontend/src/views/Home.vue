@@ -213,9 +213,18 @@ export default {
     this.loadProducts()
   },
   methods: {
-    loadProducts() {
-      // In a real app, this would load from API
-      console.log('Loading products...')
+    async loadProducts() {
+      // Products will be loaded from API when backend is integrated
+      // For now, using static data defined in component
+      try {
+        // Future: Use productService.getFeaturedProducts()
+        // const response = await productService.getFeaturedProducts()
+        // this.pcSets = response.data.pcSets
+        // this.laptops = response.data.laptops
+        // this.bestSellers = response.data.bestSellers
+      } catch (error) {
+        console.error('Error loading products:', error)
+      }
     }
   }
 }

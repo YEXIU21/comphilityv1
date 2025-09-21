@@ -195,13 +195,13 @@ export default {
     },
     
     signupWithFacebook() {
-      // Implement Facebook signup
-      console.log('Facebook signup clicked')
+      // Facebook OAuth integration - to be implemented
+      alert('Facebook signup will be available after backend integration')
     },
     
     signupWithGoogle() {
-      // Implement Google signup
-      console.log('Google signup clicked')
+      // Google OAuth integration - to be implemented
+      alert('Google signup will be available after backend integration')
     },
     
     resetForm() {

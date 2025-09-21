@@ -151,8 +151,8 @@ export default createStore({
     async resetPassword({ commit }, email) {
       // Simulate API call
       try {
-        // In a real app, use the email parameter for password reset
-        console.log('Password reset requested for:', email)
+        // Password reset logic will be handled by authService
+        // For now, just simulate success
         commit('hidePasswordResetModal')
         return { success: true, message: 'Password reset email sent' }
       } catch (error) {

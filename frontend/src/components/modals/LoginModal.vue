@@ -150,18 +150,18 @@ export default {
     },
     
     openAdminLogin() {
-      // In a real app, this would open an admin login modal
-      console.log('Admin login clicked')
+      // Admin login functionality - to be implemented with backend
+      alert('Admin login will be available after backend integration')
     },
     
     loginWithFacebook() {
-      // Implement Facebook login
-      console.log('Facebook login clicked')
+      // Facebook OAuth integration - to be implemented
+      alert('Facebook login will be available after backend integration')
     },
     
     loginWithGoogle() {
-      // Implement Google login
-      console.log('Google login clicked')
+      // Google OAuth integration - to be implemented
+      alert('Google login will be available after backend integration')
     },
     
     resetForm() {
