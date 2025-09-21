@@ -28,7 +28,13 @@ package-lock.json
 .Trashes
 ehthumbs.db
 Thumbs.db
-
+DEVELOPMENT.md
+FRONTEND-COMPLETION-REPORT.md
+NAVBAR-PROFESSIONAL-UPGRADE.md
+PERFORMANCE-COMPARISON-UPGRADE.md
+START_HERE.md
+infinity.py
+.windsurf
 # Logs
 logs
 *.log
