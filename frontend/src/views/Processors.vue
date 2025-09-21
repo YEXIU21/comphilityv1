@@ -18,7 +18,7 @@
           @click="viewProduct(product.id)"
         >
           <div class="product-image">
-            <img :src="product.image || '/images/placeholder-product.png'" :alt="product.name" />
+            <img :src="product.image || 'https://via.placeholder.com/300x200/E5E7EB/6B7280?text=Processor'" :alt="product.name" />
             <button @click.stop="toggleWishlist(product)" class="wishlist-btn">
               <i :class="isInWishlist(product.id) ? 'fas fa-heart' : 'far fa-heart'"></i>
             </button>
@@ -32,9 +32,14 @@
               <button @click.stop="buyNow(product)" class="btn btn-primary buy-btn">
                 BUY NOW
               </button>
-              <button @click.stop="addToCart(product)" class="btn btn-outline cart-btn">
-                <i class="fas fa-shopping-cart"></i>
-              </button>
+              <div class="action-icons">
+                <button @click.stop="addToCart(product)" class="action-btn cart-btn" title="Add to Cart">
+                  <i class="fas fa-shopping-cart"></i>
+                </button>
+                <button @click.stop="viewProduct(product.id)" class="action-btn view-btn" title="Quick View">
+                  <i class="fas fa-eye"></i>
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -344,6 +349,7 @@ export default {
   line-height: 1.3;
   display: -webkit-box;
   -webkit-line-clamp: 2;
+  line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -367,20 +373,42 @@ export default {
   font-size: 0.875rem;
 }
 
-.cart-btn {
-  width: 3rem;
-  height: 3rem;
+.action-icons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.action-btn {
+  width: 2.25rem;
+  height: 2.25rem;
+  border: 1px solid var(--gray-300);
+  background: var(--white);
+  color: var(--gray-500);
+  border-radius: 6px;
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0;
-  border-color: var(--primary-blue);
-  color: var(--primary-blue);
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+  font-size: 0.875rem;
 }
 
-.cart-btn:hover {
+.action-btn:hover {
   background: var(--primary-blue);
   color: var(--white);
+  border-color: var(--primary-blue);
+  transform: translateY(-1px);
+}
+
+.action-btn.cart-btn:hover {
+  background: var(--success);
+  border-color: var(--success);
+}
+
+.action-btn.view-btn:hover {
+  background: var(--info);
+  border-color: var(--info);
 }
 
 .pagination {
@@ -467,9 +495,8 @@ export default {
     flex-direction: column;
   }
   
-  .cart-btn {
-    width: 100%;
-    height: 3rem;
+  .action-icons {
+    justify-content: center;
   }
   
   .pagination {

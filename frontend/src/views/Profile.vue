@@ -105,7 +105,7 @@
                     <tr v-for="item in order.items" :key="item.id">
                       <td>
                         <div class="item-info">
-                          <img :src="item.image || '/images/placeholder-product.png'" :alt="item.name" class="item-image">
+                          <img :src="item.image || 'https://via.placeholder.com/60x60/E5E7EB/6B7280?text=Order'" :alt="item.name" class="item-image">
                           <span>{{ item.name }}</span>
                         </div>
                       </td>

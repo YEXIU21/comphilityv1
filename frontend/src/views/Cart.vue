@@ -33,7 +33,7 @@
           
           <div v-for="item in cartItems" :key="item.id" class="cart-item">
             <div class="item-image">
-              <img :src="item.image || '/images/placeholder-product.png'" :alt="item.name" />
+              <img :src="item.image || 'https://via.placeholder.com/80x80/E5E7EB/6B7280?text=Product'" :alt="item.name" />
             </div>
             
             <div class="item-details">

@@ -55,7 +55,7 @@
             </div>
             
             <div class="item-image">
-              <img :src="item.image || '/images/placeholder-product.png'" :alt="item.name" />
+              <img :src="item.image || 'https://via.placeholder.com/200x150/E5E7EB/6B7280?text=Wishlist+Item'" :alt="item.name" />
             </div>
             
             <div class="item-details">

@@ -1,7 +1,7 @@
 <template>
   <div class="product-card fade-in" @mouseenter="handleHover" @mouseleave="handleLeave">
     <div class="product-image">
-      <img :src="product.image || '/images/placeholder-product.png'" :alt="product.name" @error="handleImageError" />
+      <img :src="product.image || 'https://via.placeholder.com/300x200/E5E7EB/6B7280?text=No+Image'" :alt="product.name" @error="handleImageError" />
       <div class="product-badge" v-if="product.badge">
         {{ product.badge }}
       </div>
@@ -24,15 +24,16 @@
       
       <div class="product-actions">
         <button @click="addToCart" class="btn btn-primary buy-btn">
-          <i class="fas fa-shopping-cart"></i>
           BUY NOW
         </button>
-        <button @click="quickView" class="quick-view-btn">
-          <i class="fas fa-eye"></i>
-        </button>
-        <button @click="addToComparison" class="compare-btn" title="Compare">
-          <i class="fas fa-balance-scale"></i>
-        </button>
+        <div class="action-icons">
+          <button @click="addToCart" class="action-btn cart-btn" title="Add to Cart">
+            <i class="fas fa-shopping-cart"></i>
+          </button>
+          <button @click="quickView" class="action-btn view-btn" title="Quick View">
+            <i class="fas fa-eye"></i>
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -87,7 +88,7 @@ export default {
     },
     
     handleImageError(event) {
-      event.target.src = '/images/placeholder-product.png'
+      event.target.src = 'https://via.placeholder.com/300x200/E5E7EB/6B7280?text=No+Image'
     },
     
     addToComparison() {
@@ -273,30 +274,54 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
   padding: 0.75rem;
-  font-weight: 600;
-  font-size: 0.75rem;
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.5px;
+  transition: all 0.2s ease;
 }
 
-.cart-icon-btn {
-  width: 2.5rem;
-  height: 2.5rem;
-  border: 2px solid var(--primary-blue);
-  background: transparent;
-  color: var(--primary-blue);
-  border-radius: var(--border-radius);
+.buy-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(91, 126, 255, 0.3);
+}
+
+.action-icons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.action-btn {
+  width: 2.25rem;
+  height: 2.25rem;
+  border: 1px solid var(--gray-300);
+  background: var(--white);
+  color: var(--gray-500);
+  border-radius: 6px;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: all 0.2s ease;
   flex-shrink: 0;
+  font-size: 0.875rem;
 }
 
-.cart-icon-btn:hover {
+.action-btn:hover {
   background: var(--primary-blue);
   color: var(--white);
+  border-color: var(--primary-blue);
+  transform: translateY(-1px);
+}
+
+.action-btn.cart-btn:hover {
+  background: var(--success);
+  border-color: var(--success);
+}
+
+.action-btn.view-btn:hover {
+  background: var(--info);
+  border-color: var(--info);
 }
 
 /* Responsive Design */
@@ -314,9 +339,10 @@ export default {
     padding: 0.625rem;
   }
   
-  .cart-icon-btn {
-    width: 2.25rem;
-    height: 2.25rem;
+  .action-btn {
+    width: 2rem;
+    height: 2rem;
+    font-size: 0.75rem;
   }
 }
 
@@ -335,9 +361,8 @@ export default {
     width: 100%;
   }
   
-  .cart-icon-btn {
-    width: 100%;
-    height: 2.5rem;
+  .action-icons {
+    justify-content: center;
   }
 }
 </style>

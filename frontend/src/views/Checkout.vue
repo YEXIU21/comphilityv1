@@ -85,7 +85,7 @@
                 <td class="product-cell">
                   <div class="product-info">
                     <div class="product-image">
-                      <img :src="item.image || '/images/placeholder-product.png'" :alt="item.name">
+                      <img :src="item.image || 'https://via.placeholder.com/60x60/E5E7EB/6B7280?text=Item'" :alt="item.name">
                     </div>
                     <div class="product-name">{{ item.name }}</div>
                   </div>

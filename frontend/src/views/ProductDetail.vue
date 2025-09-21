@@ -63,6 +63,7 @@
                 {{ isInWishlist ? 'Remove from Wishlist' : 'Add to Wishlist' }}
               </button>
               <button @click="addToCart" class="btn btn-primary add-to-cart-btn">
+                <i class="fas fa-shopping-cart"></i>
                 Add to Cart
               </button>
               <button @click="buyNow" class="btn btn-primary buy-now-btn">

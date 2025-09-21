@@ -42,7 +42,7 @@
             </div>
             <div class="hero-image scale-in">
               <div class="hero-image-wrapper">
-                <img src="/images/hero-pc-build.jpg" alt="Custom PC Build" />
+                <img src="https://via.placeholder.com/600x400/5B7EFF/ffffff?text=Custom+PC+Build" alt="Custom PC Build" />
                 <div class="image-glow"></div>
               </div>
             </div>
@@ -109,7 +109,7 @@ export default {
           id: 1,
           name: 'INTEL I5 BUNDLE',
           price: 25195.00,
-          image: '/images/intel-i5-bundle.jpg',
+          image: 'https://via.placeholder.com/300x200/4169E1/ffffff?text=Intel+i5+Bundle',
           rating: 5.0,
           category: 'PC Sets'
         },
@@ -117,7 +117,7 @@ export default {
           id: 2,
           name: 'RYZEN 5 BUNDLE',
           price: 16295.00,
-          image: '/images/ryzen-5-bundle.jpg',
+          image: 'https://via.placeholder.com/300x200/FF6B35/ffffff?text=Ryzen+5+Bundle',
           rating: 5.0,
           category: 'PC Sets'
         },
@@ -125,7 +125,7 @@ export default {
           id: 3,
           name: 'INTEL I7 BUNDLE',
           price: 46139.00,
-          image: '/images/intel-i7-bundle.jpg',
+          image: 'https://via.placeholder.com/300x200/4169E1/ffffff?text=Intel+i7+Bundle',
           rating: 5.0,
           category: 'PC Sets'
         },
@@ -133,7 +133,7 @@ export default {
           id: 4,
           name: 'RYZEN 7 BUNDLE',
           price: 21250.00,
-          image: '/images/ryzen-7-bundle.jpg',
+          image: 'https://via.placeholder.com/300x200/FF6B35/ffffff?text=Ryzen+7+Bundle',
           rating: 5.0,
           category: 'PC Sets'
         }
@@ -143,7 +143,7 @@ export default {
           id: 5,
           name: 'MSI THIN 15',
           price: 51999.00,
-          image: '/images/msi-thin-15.jpg',
+          image: 'https://via.placeholder.com/300x200/000000/ffffff?text=MSI+Thin+15',
           rating: 5.0,
           category: 'Laptops'
         },
@@ -151,7 +151,7 @@ export default {
           id: 6,
           name: 'ACER NITRO 5',
           price: 45999.00,
-          image: '/images/acer-nitro-5.jpg',
+          image: 'https://via.placeholder.com/300x200/FF6B00/ffffff?text=Acer+Nitro+5',
           rating: 5.0,
           category: 'Laptops'
         },
@@ -159,7 +159,7 @@ export default {
           id: 7,
           name: 'PREDATOR HELIOS NEO 16',
           price: 98999.00,
-          image: '/images/predator-helios.jpg',
+          image: 'https://via.placeholder.com/300x200/00D4AA/ffffff?text=Predator+Helios',
           rating: 5.0,
           category: 'Laptops'
         },
@@ -167,7 +167,7 @@ export default {
           id: 8,
           name: 'LENOVO LEGION 5 PRO',
           price: 118999.00,
-          image: '/images/lenovo-legion.jpg',
+          image: 'https://via.placeholder.com/300x200/E60012/ffffff?text=Lenovo+Legion',
           rating: 5.0,
           category: 'Laptops'
         }
@@ -177,7 +177,7 @@ export default {
           id: 9,
           name: 'MSI Pro MP223 21.5" 100Hz',
           price: 3620.00,
-          image: '/images/msi-monitor.jpg',
+          image: 'https://via.placeholder.com/300x200/FF0000/ffffff?text=MSI+Monitor',
           rating: 5.0,
           category: 'Monitor'
         },
@@ -185,7 +185,7 @@ export default {
           id: 10,
           name: 'Nvision EC2451 PRO 180HZ',
           price: 5230.00,
-          image: '/images/nvision-monitor.jpg',
+          image: 'https://via.placeholder.com/300x200/2E8B57/ffffff?text=Nvision+Monitor',
           rating: 5.0,
           category: 'Monitor'
         },
@@ -193,7 +193,7 @@ export default {
           id: 11,
           name: 'Nvision S2515 24.5" 100HZ',
           price: 98999.00,
-          image: '/images/nvision-s2515.jpg',
+          image: 'https://via.placeholder.com/300x200/2E8B57/ffffff?text=Nvision+S2515',
           rating: 5.0,
           category: 'Monitor'
         },
@@ -201,7 +201,7 @@ export default {
           id: 12,
           name: 'Nvision N2455PRO 100Hz',
           price: 3950.00,
-          image: '/images/nvision-n2455.jpg',
+          image: 'https://via.placeholder.com/300x200/2E8B57/ffffff?text=Nvision+N2455',
           rating: 5.0,
           category: 'Monitor'
         }
