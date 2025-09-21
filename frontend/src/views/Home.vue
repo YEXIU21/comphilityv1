@@ -10,10 +10,10 @@
         <div class="hero-slider">
           <div class="hero-slide active fade-in">
             <div class="hero-content slide-up">
-              <div class="hero-badge">✨ Premium Components</div>
-              <h1 class="hero-title">Build Your Dream PC</h1>
+              <div class="hero-badge">🚀 Custom PC Builder</div>
+              <h1 class="hero-title">Create Your Perfect Gaming Rig</h1>
               <p class="hero-subtitle">
-                High-performance components for gamers, creators, and professionals. Experience the power of custom builds with our expert guidance.
+                Design and build your ultimate gaming PC with our intuitive PC Builder tool. Choose from premium components, get compatibility checks, and create a system that matches your exact needs and budget.
               </p>
               <div class="hero-actions">
                 <router-link to="/build-pc" class="btn btn-primary hero-cta">
@@ -41,9 +41,36 @@
               </div>
             </div>
             <div class="hero-image scale-in">
-              <div class="hero-image-wrapper">
-                <img src="https://via.placeholder.com/600x400/5B7EFF/ffffff?text=Custom+PC+Build" alt="Custom PC Build" />
-                <div class="image-glow"></div>
+              <div class="custom-pc-visual">
+                <div class="pc-case">
+                  <div class="pc-case-body">
+                    <div class="pc-components">
+                      <div class="component cpu">
+                        <i class="fas fa-microchip"></i>
+                        <span>CPU</span>
+                      </div>
+                      <div class="component gpu">
+                        <i class="fas fa-memory"></i>
+                        <span>GPU</span>
+                      </div>
+                      <div class="component ram">
+                        <i class="fas fa-hdd"></i>
+                        <span>RAM</span>
+                      </div>
+                    </div>
+                    <div class="pc-lights">
+                      <div class="light light-1"></div>
+                      <div class="light light-2"></div>
+                      <div class="light light-3"></div>
+                    </div>
+                  </div>
+                  <div class="pc-screen">
+                    <div class="screen-content">
+                      <i class="fas fa-desktop"></i>
+                      <div class="build-text">Custom PC Build</div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -511,9 +538,203 @@ export default {
   }
 }
 
+/* Custom PC Visual Styles */
+.custom-pc-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+  padding: 2rem;
+}
+
+.pc-case {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.pc-case-body {
+  position: relative;
+  background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
+  border: 2px solid #333;
+  border-radius: 12px;
+  padding: 2rem;
+  min-width: 280px;
+  min-height: 200px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3),
+              inset 0 2px 4px rgba(255, 255, 255, 0.1);
+}
+
+.pc-components {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.component {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  background: linear-gradient(145deg, #333, #2a2a2a);
+  border: 1px solid #444;
+  border-radius: 8px;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.component:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(91, 126, 255, 0.3);
+}
+
+.component i {
+  font-size: 1.5rem;
+  color: var(--primary-blue);
+}
+
+.component span {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.cpu i { color: #ff6b35; }
+.gpu i { color: #00d4aa; }
+.ram i { color: #ffd700; }
+
+.pc-lights {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.5rem;
+}
+
+.light {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+.light-1 {
+  background: #ff6b35;
+  animation-delay: 0s;
+}
+
+.light-2 {
+  background: #00d4aa;
+  animation-delay: 0.7s;
+}
+
+.light-3 {
+  background: var(--primary-blue);
+  animation-delay: 1.4s;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+.pc-screen {
+  background: linear-gradient(145deg, #1a1a1a, #2a2a2a);
+  border: 2px solid #333;
+  border-radius: 8px;
+  padding: 1.5rem;
+  min-width: 200px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.screen-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  color: #fff;
+}
+
+.screen-content i {
+  font-size: 2.5rem;
+  color: var(--primary-blue);
+  animation: screenGlow 3s ease-in-out infinite;
+}
+
+.build-text {
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background: linear-gradient(45deg, var(--primary-blue), #00d4aa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-align: center;
+}
+
+@keyframes screenGlow {
+  0%, 100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 10px var(--primary-blue));
+  }
+  50% {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 20px var(--primary-blue));
+  }
+}
+
 @media (max-width: 576px) {
   .section-title {
     font-size: 1.25rem;
+  }
+  
+  .custom-pc-visual {
+    height: 300px;
+    padding: 1rem;
+  }
+  
+  .pc-case-body {
+    min-width: 200px;
+    min-height: 150px;
+    padding: 1rem;
+  }
+  
+  .pc-components {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+  }
+  
+  .component {
+    padding: 0.5rem;
+  }
+  
+  .component i {
+    font-size: 1.2rem;
+  }
+  
+  .pc-screen {
+    padding: 1rem;
+    min-width: 150px;
+  }
+  
+  .screen-content i {
+    font-size: 2rem;
+  }
+  
+  .build-text {
+    font-size: 1rem;
   }
 }
 </style>
