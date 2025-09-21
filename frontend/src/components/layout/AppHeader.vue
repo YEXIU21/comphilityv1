@@ -40,18 +40,24 @@
 
         <!-- Right Section: Search & Icons -->
         <div class="navbar-right">
-          <!-- Search Box -->
-          <div class="search-box">
-            <input 
-              type="text" 
-              placeholder="Search for products..." 
-              v-model="searchQuery"
-              @keyup.enter="performSearch"
-              class="search-field"
-            />
-            <button @click="performSearch" class="search-button">
-              <i class="fas fa-search"></i>
-            </button>
+          <!-- Enhanced Search Box -->
+          <div class="search-container">
+            <div class="search-box">
+              <div class="search-input-wrapper">
+                <input 
+                  type="text" 
+                  placeholder="Search products..." 
+                  v-model="searchQuery"
+                  @keyup.enter="performSearch"
+                  @focus="onSearchFocus"
+                  @blur="onSearchBlur"
+                  class="search-field"
+                />
+              </div>
+              <button @click="performSearch" class="search-button" :disabled="!searchQuery.trim()">
+                <i class="fas fa-search"></i>
+              </button>
+            </div>
           </div>
 
           <!-- Action Icons -->
@@ -380,49 +386,119 @@ export default {
   gap: 1.5rem;
 }
 
-/* Search Box */
-.search-box {
+/* ===== SYSTEM COLOR SCHEMA SEARCH BOX ===== */
+
+.search-container {
+  position: relative;
   display: flex;
   align-items: center;
-  background: var(--gray-50);
-  border: 2px solid var(--gray-200);
-  border-radius: 25px;
-  transition: all 0.3s ease;
+}
+
+.search-box {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  background: var(--white);
+  border: 2px solid var(--gray-300);
+  border-radius: 50px;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  height: 44px;
+}
+
+.search-box:hover {
+  border-color: var(--primary-blue-light);
+  box-shadow: 0 4px 16px rgba(91, 126, 255, 0.25);
+  transform: translateY(-1px);
+  background: var(--white);
 }
 
 .search-box:focus-within {
   border-color: var(--primary-blue);
   background: var(--white);
+  box-shadow: 0 0 0 4px rgba(91, 126, 255, 0.15), 0 4px 20px rgba(91, 126, 255, 0.2);
+  transform: translateY(-1px);
+}
+
+.search-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex: 1;
+  height: 100%;
+  background: var(--white);
 }
 
 .search-field {
-  padding: 0.75rem 1rem;
+  width: 280px;
+  padding: 0 20px;
   border: none;
   background: transparent;
-  width: 250px;
-  font-size: 0.9rem;
-  font-weight: 500;
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: var(--gray-700);
   outline: none;
-  line-height: 1.4;
-  vertical-align: middle;
-  text-align: left;
+  height: 100%;
+  transition: all 0.3s ease;
+}
+
+.search-field::placeholder {
+  color: var(--gray-500);
+  font-weight: 400;
+  transition: opacity 0.3s ease;
+}
+
+.search-field:focus {
+  color: var(--gray-800);
+  font-weight: 500;
+}
+
+.search-field:focus::placeholder {
+  opacity: 0.6;
+  color: var(--gray-400);
 }
 
 .search-button {
-  padding: 0.75rem 1rem;
-  background: var(--primary-blue);
-  border: none;
-  border-radius: 0 23px 23px 0;
-  color: var(--white);
-  cursor: pointer;
-  transition: background-color 0.2s ease;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 0 18px;
+  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-blue-dark) 100%);
+  border: none;
+  color: var(--white);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  height: 100%;
+  min-width: 50px;
+  box-shadow: 0 2px 8px rgba(91, 126, 255, 0.3);
 }
 
-.search-button:hover {
-  background: var(--primary-blue-dark);
+.search-button:hover:not(:disabled) {
+  background: linear-gradient(135deg, var(--primary-blue-dark) 0%, var(--primary-blue) 100%);
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(91, 126, 255, 0.4);
+}
+
+.search-button:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.search-button:disabled {
+  background: var(--gray-400);
+  cursor: not-allowed;
+  opacity: 0.6;
+  box-shadow: none;
+}
+
+.search-button i {
+  font-size: 1rem;
+  transition: transform 0.2s ease;
+}
+
+.search-button:hover:not(:disabled) i {
+  transform: scale(1.1);
 }
 
 /* Action Bar */
