@@ -2,7 +2,7 @@
   <div class="product-management">
     <!-- Header Controls -->
     <div class="controls-header">
-      <button class="create-btn" @click="showCreateModal = true">
+      <button class="create-btn" @click="navigateToCreate">
         <i class="fas fa-plus-circle"></i>
         Create New
       </button>
@@ -201,6 +201,9 @@ export default {
     }
   },
   methods: {
+    navigateToCreate() {
+      this.$router.push('/admin/products/create')
+    },
     formatPrice(price) {
       return price.toLocaleString('en-PH', { minimumFractionDigits: 2 })
     },
