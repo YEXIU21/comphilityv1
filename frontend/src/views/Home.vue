@@ -271,6 +271,7 @@ export default {
   display: flex;
   align-items: center;
   padding-top: 2rem;
+  width: 100%;
 }
 
 .hero-background {
@@ -512,21 +513,85 @@ export default {
   transform: translateX(2px);
 }
 
+/* Mid-range responsive adjustments for proper width utilization */
+@media (max-width: 1288px) {
+  .hero-slide {
+    gap: 3rem;
+  }
+  
+  .hero-title {
+    font-size: 3rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .hero-slide {
+    gap: 2.5rem;
+  }
+  
+  .hero-title {
+    font-size: 2.8rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
+  
+  .hero-actions {
+    gap: 1.25rem;
+  }
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .hero-section {
-    padding: 1rem 0;
+    padding: 2rem 0 1rem;
+    min-height: 70vh;
+  }
+  
+  .hero-slide {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    min-height: auto;
+    text-align: center;
+  }
+  
+  .hero-title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.125rem;
     margin-bottom: 2rem;
   }
   
+  .hero-actions {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .hero-stats {
+    justify-content: center;
+    gap: 1.5rem;
+  }
+  
   .products-section {
-    margin-bottom: 3rem;
+    padding: 3rem 0;
+    margin-top: -1rem;
   }
   
   .section-header {
     flex-direction: column;
     align-items: flex-start;
     gap: 1rem;
+    margin-bottom: 2rem;
   }
   
   .section-title {
@@ -696,6 +761,53 @@ export default {
 }
 
 @media (max-width: 576px) {
+  .hero-section {
+    padding: 1.5rem 0 0.5rem;
+    min-height: 60vh;
+  }
+  
+  .hero-title {
+    font-size: 2rem;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+    padding: 0 1rem;
+  }
+  
+  .hero-actions {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+    padding: 0 1rem;
+  }
+  
+  .hero-actions .btn {
+    width: 100%;
+    max-width: 300px;
+    min-height: 48px;
+    font-size: 0.95rem;
+    font-weight: 600;
+  }
+  
+  .hero-stats {
+    gap: 1.25rem;
+    padding: 0 1rem;
+  }
+  
+  .stat-number {
+    font-size: 1.5rem;
+  }
+  
+  .stat-label {
+    font-size: 0.75rem;
+  }
+  
   .section-title {
     font-size: 1.25rem;
   }
@@ -735,6 +847,101 @@ export default {
   
   .build-text {
     font-size: 1rem;
+  }
+}
+
+/* iPhone 14 Pro Max and similar devices (430px width) - Enhanced Mobile Sizing */
+@media (max-width: 430px) {
+  .hero-section {
+    padding: 2rem 0 1rem;
+    min-height: 65vh;
+  }
+  
+  .hero-title {
+    font-size: 2.5rem;
+    line-height: 1.1;
+    margin-bottom: 1.25rem;
+    font-weight: 800;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.125rem;
+    padding: 0 1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+  }
+  
+  .hero-actions {
+    flex-direction: column;
+    padding: 0 1rem;
+    gap: 1rem;
+  }
+  
+  .hero-actions .btn {
+    width: 100%;
+    max-width: 320px;
+    font-size: 1.125rem;
+    padding: 1rem 2rem;
+    min-height: 56px;
+    font-weight: 700;
+  }
+  
+  .hero-stats {
+    padding: 0 1rem;
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  
+  .stat-number {
+    font-size: 1.75rem;
+    font-weight: 800;
+  }
+  
+  .stat-label {
+    font-size: 1rem;
+    margin-top: 0.5rem;
+  }
+}
+
+/* iPhone 12 Pro and similar devices (390px width) */
+@media (max-width: 390px) {
+  .hero-title {
+    font-size: 1.75rem;
+    line-height: 1.1;
+  }
+  
+  .hero-subtitle {
+    font-size: 0.9rem;
+    padding: 0 0.5rem;
+  }
+  
+  .hero-actions {
+    padding: 0 0.5rem;
+  }
+  
+  .hero-actions .btn {
+    max-width: 280px;
+    font-size: 0.9rem;
+  }
+  
+  .hero-stats {
+    padding: 0 0.5rem;
+    gap: 1rem;
+  }
+  
+  .stat-number {
+    font-size: 1.25rem;
+  }
+  
+  .pc-case-body {
+    min-width: 180px;
+    min-height: 130px;
+    padding: 0.75rem;
+  }
+  
+  .pc-components {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.375rem;
   }
 }
 </style>

@@ -631,6 +631,7 @@ export default {
   
   .page-header {
     margin-bottom: 2rem;
+    padding: 0 1rem;
   }
   
   .page-title {
@@ -644,6 +645,23 @@ export default {
   .filters-section {
     margin-bottom: 1.5rem;
     padding: 1rem;
+  }
+  
+  .filter-row {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: stretch;
+  }
+  
+  .filter-group {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: stretch;
+  }
+  
+  .filter-select {
+    min-width: unset;
+    width: 100%;
   }
   
   .no-results {
@@ -667,6 +685,52 @@ export default {
     width: 2.25rem;
     height: 2.25rem;
     font-size: 0.875rem;
+  }
+}
+
+/* iPhone 14 Pro Max (430px width) - Enhanced Mobile Sizing */
+@media (max-width: 430px) {
+  .products {
+    padding: 1rem 0;
+  }
+  
+  .page-header {
+    padding: 2rem 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .page-title {
+    font-size: 2rem;
+    font-weight: 700;
+  }
+  
+  .page-description {
+    font-size: 1.125rem;
+    line-height: 1.6;
+  }
+  
+  .filters-section {
+    padding: 1.25rem;
+    margin-bottom: 2rem;
+  }
+  
+  .search-input {
+    padding: 1rem 1.25rem;
+    font-size: 1.125rem;
+    min-height: 48px;
+    border-radius: 12px;
+  }
+  
+  .filter-select {
+    padding: 1rem 1.25rem;
+    font-size: 1.125rem;
+    min-height: 48px;
+    border-radius: 12px;
+  }
+  
+  .filter-label {
+    font-size: 1rem;
+    font-weight: 600;
   }
 }
 </style>

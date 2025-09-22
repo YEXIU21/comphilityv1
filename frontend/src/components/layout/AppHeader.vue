@@ -220,6 +220,7 @@ export default {
   z-index: 100;
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(91, 126, 255, 0.1);
+  width: 100%;
 }
 
 /* ===== COMPLETE NAVBAR OVERHAUL ===== */
@@ -628,14 +629,31 @@ export default {
   font-size: 1.25rem;
   color: var(--gray-600);
   cursor: pointer;
-  padding: 0.5rem;
+  padding: 0.75rem;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  min-width: 44px;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile-menu-toggle:hover {
+  background: var(--gray-100);
+  color: var(--primary-blue);
 }
 
 .mobile-menu {
   display: none;
   background: var(--white);
   border-top: 1px solid var(--gray-200);
-  padding: 1rem 0;
+  padding: 0.5rem 0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 1000;
 }
 
 .mobile-nav {
@@ -645,27 +663,59 @@ export default {
 }
 
 .mobile-nav-link {
-  padding: 0.75rem 0;
+  padding: 1.25rem 2rem;
   color: var(--gray-700);
   text-decoration: none;
   font-weight: 500;
   border-bottom: 1px solid var(--gray-100);
+  transition: all 0.2s ease;
+  min-height: 56px;
+  display: flex;
+  align-items: center;
+  font-size: 1.125rem;
 }
 
 .mobile-nav-link:hover {
   color: var(--primary-blue);
+  background: var(--gray-50);
+  padding-left: 2.5rem;
+}
+
+.mobile-nav-link.router-link-active {
+  color: var(--primary-blue);
+  background: rgba(91, 126, 255, 0.05);
+  font-weight: 600;
 }
 
 .mobile-auth {
   display: flex;
-  gap: 0.5rem;
+  gap: 0.75rem;
+  padding: 1rem 2rem;
+  flex-direction: column;
+}
+
+.mobile-auth .btn {
+  width: 100%;
+  justify-content: center;
+  min-height: 48px;
 }
 
 /* Responsive */
+@media (max-width: 1288px) {
+  .navbar-content {
+    gap: 2rem;
+    padding: 0.75rem 1.5rem;
+  }
+  
+  .search-field {
+    width: 220px;
+  }
+}
+
 @media (max-width: 1024px) {
   .navbar-content {
     gap: 1.5rem;
-    padding: 0.75rem 1.5rem;
+    padding: 0.75rem 1.25rem;
   }
   
   .navigation-menu {
@@ -679,9 +729,10 @@ export default {
 
 @media (max-width: 768px) {
   .navbar-content {
-    grid-template-columns: auto auto;
-    gap: 1rem;
-    padding: 1rem;
+    grid-template-columns: auto 1fr auto auto;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    align-items: center;
   }
   
   .navbar-center {
@@ -689,51 +740,123 @@ export default {
   }
   
   .navbar-right {
-    gap: 1rem;
+    gap: 0.5rem;
+    order: 2;
   }
   
   .search-field {
-    width: 150px;
+    width: 160px;
   }
   
   .action-bar {
     gap: 0.25rem;
+    display: flex;
+    align-items: center;
   }
   
   .action-icon {
     width: 40px;
     height: 40px;
+    font-size: 1rem;
+  }
+
+  .mobile-menu-toggle {
+    display: flex;
+    order: 3;
+  }
+  
+  .mobile-menu {
+    display: block;
   }
 }
 
 @media (max-width: 480px) {
-  .header-content {
-    padding-left: 0.75rem;
-    padding-right: 0.75rem;
+  .navbar-content {
+    grid-template-columns: 1fr auto auto;
+    padding: 0.75rem;
+    gap: 0.5rem;
+    align-items: center;
   }
   
-  .search-input {
-    width: 150px;
+  .navbar-left {
+    justify-self: start;
   }
   
-  .search-input:focus {
-    width: 180px;
+  .navbar-right {
+    gap: 0.375rem;
+    order: 1;
+    justify-self: end;
   }
   
-  .icon-btn {
-    width: 40px;
-    height: 40px;
-    font-size: 1rem;
+  .search-field {
+    width: 120px;
+  }
+  
+  .search-box {
+    height: 38px;
+  }
+  
+  .action-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 0.95rem;
+  }
+  
+  .action-bar {
+    gap: 0.125rem;
+  }
+  
+  .logo-text {
+    font-size: 1.6rem;
+  }
+  
+  .mobile-menu-toggle {
+    order: 2;
   }
 }
 
-@media (max-width: 576px) {
-  .logo-text {
+/* iPhone 14 Pro Max and similar devices (430px width) - Enhanced Mobile Sizing */
+@media (max-width: 430px) {
+  .navbar-content {
+    grid-template-columns: 1fr auto auto;
+    gap: 1rem;
+    padding: 1rem;
+    height: auto;
+    min-height: 70px;
+  }
+  
+  .navbar-left {
+    justify-self: start;
+  }
+  
+  .navbar-right {
+    gap: 0.75rem;
+    order: 1;
+  }
+  
+  .search-container {
     display: none;
   }
   
-  .header-content {
-    padding: 0.75rem 0;
+  .action-icon {
+    width: 48px;
+    height: 48px;
+    font-size: 1.2rem;
+    border-radius: 8px;
+  }
+  
+  .logo-text {
+    font-size: 2rem;
+    font-weight: 800;
+  }
+  
+  .mobile-menu-toggle {
+    display: flex;
+    order: 2;
+    padding: 0.75rem;
+    min-width: 48px;
+    min-height: 48px;
+    font-size: 1.25rem;
   }
 }
 </style>

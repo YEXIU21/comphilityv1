@@ -1074,6 +1074,126 @@ export default {
   .component-option {
     flex-direction: column;
     text-align: center;
+    gap: 0.75rem;
+  }
+  
+  .component-image {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .category-header {
+    padding: 1rem;
+  }
+  
+  .component-options {
+    padding: 1rem;
+  }
+}
+
+/* iPhone 14 Pro Max (430px width) */
+@media (max-width: 430px) {
+  .build-pc {
+    padding: 0.75rem 0;
+  }
+  
+  .page-header {
+    padding: 1.5rem 0.75rem;
+    margin-bottom: 2rem;
+  }
+  
+  .page-title {
+    font-size: 1.5rem;
+  }
+  
+  .page-description {
+    font-size: 0.95rem;
+    padding: 0 0.25rem;
+  }
+  
+  .build-progress {
+    padding: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .progress-header {
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: flex-start;
+  }
+  
+  .estimated-total {
+    font-size: 1rem;
+  }
+  
+  .pc-builder {
+    gap: 1rem;
+  }
+  
+  .build-summary {
+    order: -1;
+  }
+  
+  .summary-card {
+    padding: 1rem;
+  }
+  
+  .component-category {
+    margin-bottom: 0.75rem;
+  }
+  
+  .category-header {
+    padding: 1rem 0.75rem;
+  }
+  
+  .category-name {
+    font-size: 1rem;
+  }
+  
+  .category-description {
+    font-size: 0.8rem;
+  }
+  
+  .component-options {
+    padding: 0.75rem;
+  }
+  
+  .component-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+  
+  .component-option {
+    padding: 0.75rem;
+    flex-direction: row;
+    text-align: left;
+    gap: 0.75rem;
+  }
+  
+  .component-image {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .component-info .component-name {
+    font-size: 0.8rem;
+  }
+  
+  .component-specs {
+    font-size: 0.7rem;
+  }
+  
+  .component-price {
+    font-size: 0.8rem;
+  }
+  
+  .build-actions {
+    gap: 0.5rem;
+  }
+  
+  .build-actions .btn {
+    padding: 0.625rem;
+    font-size: 0.85rem;
   }
 }
 

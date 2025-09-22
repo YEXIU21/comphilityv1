@@ -352,4 +352,36 @@ export default {
     padding: 1rem;
   }
 }
+
+/* iPhone 14 Pro Max Mobile Responsive */
+@media (max-width: 430px) {
+  .pc-sets {
+    padding: 0.75rem 0;
+  }
+  
+  .page-header {
+    padding: 1.5rem 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .page-title {
+    font-size: 1.5rem;
+  }
+  
+  .page-description {
+    font-size: 0.9rem;
+  }
+  
+  .category-section {
+    margin-bottom: 2rem;
+  }
+  
+  .section-header {
+    padding: 0 0.75rem;
+  }
+  
+  .section-title {
+    font-size: 1.25rem;
+  }
+}
 </style>

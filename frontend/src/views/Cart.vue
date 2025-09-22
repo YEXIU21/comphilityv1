@@ -517,4 +517,47 @@ export default {
     font-size: 1.25rem;
   }
 }
+
+/* iPhone 14 Pro Max Mobile Responsive */
+@media (max-width: 430px) {
+  .cart {
+    padding: 0.75rem 0;
+  }
+  
+  .page-header {
+    padding: 1.5rem 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .page-title {
+    font-size: 1.5rem;
+  }
+  
+  .cart-item {
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 0.75rem;
+  }
+  
+  .item-image {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .item-details {
+    text-align: center;
+  }
+  
+  .item-name {
+    font-size: 0.875rem;
+  }
+  
+  .quantity-controls {
+    justify-content: center;
+  }
+  
+  .checkout-summary {
+    padding: 0.75rem;
+  }
+}
 </style>

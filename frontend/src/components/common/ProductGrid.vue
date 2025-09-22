@@ -123,4 +123,24 @@ export default {
     gap: 1rem;
   }
 }
+
+/* iPhone 14 Pro Max (430px width) */
+@media (max-width: 430px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+  
+  .empty-grid {
+    padding: 2rem 0.75rem;
+  }
+  
+  .empty-grid i {
+    font-size: 2.5rem;
+  }
+  
+  .empty-grid p {
+    font-size: 1rem;
+  }
+}
 </style>

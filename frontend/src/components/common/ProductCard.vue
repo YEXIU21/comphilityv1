@@ -365,4 +365,75 @@ export default {
     justify-content: center;
   }
 }
+
+/* iPhone 14 Pro Max (430px width) - Enhanced Mobile Sizing */
+@media (max-width: 430px) {
+  .product-card {
+    max-width: 100%;
+    border-radius: 16px;
+  }
+  
+  .product-info {
+    padding: 1.25rem;
+  }
+  
+  .product-title {
+    font-size: 1.125rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.3;
+    font-weight: 600;
+  }
+  
+  .product-price {
+    margin-bottom: 1rem;
+  }
+  
+  .current-price {
+    font-size: 1.25rem;
+    font-weight: 700;
+  }
+  
+  .buy-btn {
+    padding: 0.875rem 1.25rem;
+    font-size: 1rem;
+    font-weight: 700;
+    min-height: 48px;
+  }
+  
+  .action-btn {
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1rem;
+    border-radius: 8px;
+  }
+  
+  .wishlist-btn {
+    width: 2.75rem;
+    height: 2.75rem;
+    top: 0.75rem;
+    right: 0.75rem;
+    font-size: 1.1rem;
+  }
+  
+  .product-badge {
+    top: 0.75rem;
+    left: 0.75rem;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    border-radius: 8px;
+  }
+  
+  .product-rating {
+    margin-bottom: 1rem;
+  }
+  
+  .star {
+    font-size: 1rem;
+  }
+  
+  .rating-text {
+    font-size: 0.875rem;
+  }
+}
 </style>
