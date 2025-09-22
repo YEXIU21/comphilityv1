@@ -95,6 +95,7 @@
 
 <script>
 import { mapMutations, mapActions } from 'vuex'
+import mockAuth from '@/services/mockAuth'
 
 export default {
   name: 'LoginModal',
@@ -126,9 +127,16 @@ export default {
       this.error = ''
       
       try {
-        const result = await this.login(this.loginData)
+        // Use mock authentication service
+        const result = await mockAuth.login(this.loginData.email, this.loginData.password)
+        
         if (result.success) {
+          // Update Vuex store
+          this.$store.commit('setUser', result.user)
           this.closeModal()
+          
+          // Show success message
+          alert(`Welcome back, ${result.user.name}!`)
         } else {
           this.error = result.message || 'Login failed. Please try again.'
         }
@@ -149,9 +157,32 @@ export default {
       this.showPasswordResetModal()
     },
     
-    openAdminLogin() {
-      // Admin login functionality - to be implemented with backend
-      alert('Admin login will be available after backend integration')
+    async openAdminLogin() {
+      this.isLoading = true
+      this.error = ''
+      
+      try {
+        // Use mock admin authentication
+        const result = await mockAuth.adminLogin(this.loginData.email, this.loginData.password)
+        
+        if (result.success) {
+          // Update admin store
+          this.$store.commit('admin/SET_ADMIN_USER', result.user)
+          this.closeModal()
+          
+          // Redirect to admin dashboard
+          this.$router.push('/admin/dashboard')
+          
+          // Show success message
+          alert(`Welcome Admin: ${result.user.name}!`)
+        } else {
+          this.error = result.message || 'Invalid admin credentials. Use admin@comphility.com / admin123'
+        }
+      } catch (error) {
+        this.error = 'An error occurred. Please try again.'
+      } finally {
+        this.isLoading = false
+      }
     },
     
     loginWithFacebook() {

@@ -1,15 +1,24 @@
 <template>
   <div id="app">
-    <AppHeader />
-    <main class="main-content">
-      <router-view />
-    </main>
-    <AppFooter />
+    <!-- Show Admin Layout for admin routes -->
+    <router-view v-if="isAdminRoute" />
+    
+    <!-- Show Regular Layout for customer routes -->
+    <template v-else>
+      <AppHeader />
+      <main class="main-content">
+        <router-view />
+      </main>
+      <AppFooter />
+    </template>
     
     <!-- Modals -->
     <LoginModal v-if="showLoginModal" @close="hideLoginModal" />
     <SignupModal v-if="showSignupModal" @close="hideSignupModal" />
     <PasswordResetModal v-if="showPasswordResetModal" @close="hidePasswordResetModal" />
+    
+    <!-- Login Instructions for Development -->
+    <LoginInstructions v-if="showInstructions && !isAdminRoute" />
   </div>
 </template>
 
@@ -19,6 +28,7 @@ import AppFooter from './components/layout/AppFooter.vue'
 import LoginModal from './components/modals/LoginModal.vue'
 import SignupModal from './components/modals/SignupModal.vue'
 import PasswordResetModal from './components/modals/PasswordResetModal.vue'
+import LoginInstructions from './components/LoginInstructions.vue'
 import { mapState, mapMutations } from 'vuex'
 
 export default {
@@ -28,10 +38,19 @@ export default {
     AppFooter,
     LoginModal,
     SignupModal,
-    PasswordResetModal
+    PasswordResetModal,
+    LoginInstructions
+  },
+  data() {
+    return {
+      showInstructions: true // Show in development mode
+    }
   },
   computed: {
-    ...mapState(['showLoginModal', 'showSignupModal', 'showPasswordResetModal'])
+    ...mapState(['showLoginModal', 'showSignupModal', 'showPasswordResetModal']),
+    isAdminRoute() {
+      return this.$route.path.startsWith('/admin')
+    }
   },
   methods: {
     ...mapMutations(['hideLoginModal', 'hideSignupModal', 'hidePasswordResetModal'])
